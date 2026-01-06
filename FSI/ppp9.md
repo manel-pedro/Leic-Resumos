@@ -1,5 +1,3 @@
-Use apenas as fontes: slides_w8.pdf, slides_w9.pdf
-
 ## Finding Collisions
 Collisions can be found with work √2n, much better than 2n!
 >Methodology
@@ -18,8 +16,25 @@ with n/2 bits of output (only half of the range)
 
 The birthday paradox (not very paradoxical, just counterintuitive)
 
+# Building Hash Functions
+Two main approaches that use iterative processes
+* Merkle-Damgård construction: Used for MD4, MD5,
+SHA-1, SHA-256, SHA-512.
+* Sponge construction: Used for SHA-3.
+## Merkle-Damgård Construction
+* H0 is the initial value: constant and public
+* M is broken into blocks of size m, M1,M2,...
+The diference in the multiple algoritms is the block size used. 
+The m blocks are feed to the compress algorith one by one using the previous value (H-1)
+
 ## Sponge Construction
-# Preciso de ainda ver
+* Absorb
+    * Fixed initial value h0, gradually accumulate message into state
+    * Message broken in blocks of size r (rate)
+    * Block XOR’ed into state
+* Squeeze
+    * Dual process iteratively constructs output
+    * Output constructed block by block
 
 # Key Takeaways
 >Hash functions are one-way functions
